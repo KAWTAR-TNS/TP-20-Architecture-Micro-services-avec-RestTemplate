@@ -1,9 +1,9 @@
 server:
-  port: 8081  # Port pour le service client
+  port: 8081
 
 spring:
   application:
-    name: SERVICE-CLIENT  # Nom du service tel qu'il apparaîtra dans Eureka
+    name: SERVICE-CLIENT  # Nom du service tel qu'il apparaï¿½tra dans Eureka
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/clientservicedb?createDatabaseIfNotExist=true
@@ -11,13 +11,13 @@ spring:
     password: ""
   jpa:
     hibernate:
-      ddl-auto: update  # Crée ou met à jour automatiquement le schéma de la base
-      show-sql: true    # Affiche les requêtes SQL générées
+      ddl-auto: update  # Crï¿½e ou met ï¿½ jour automatiquement le schï¿½ma de la base
+      show-sql: true    # Affiche les requï¿½tes SQL gï¿½nï¿½rï¿½es
 
-# Configuration Eureka (à ajouter)
+# Configuration Eureka (ï¿½ ajouter)
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/  # URL du serveur Eureka
   instance:
-    prefer-ip-address: true  # Utilise l'adresse IP plutôt que le nom d'hôte
+    prefer-ip-address: true  # Utilise l'adresse IP plutï¿½t que le nom d'hï¿½te
