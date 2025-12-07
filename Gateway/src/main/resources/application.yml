@@ -6,7 +6,7 @@ spring:
     name: Gateway  # Nom du service
   cloud:
     discovery:
-      enabled: true  # Active la découverte de services
+      enabled: true  
     gateway:
       discovery:
         locator:
