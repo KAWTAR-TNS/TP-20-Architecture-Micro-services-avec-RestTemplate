@@ -11,9 +11,11 @@ spring:
     password:
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     show-sql: true
-
+  sql:
+    init:
+      mode: always
 h2:
   console:
     enabled: true
