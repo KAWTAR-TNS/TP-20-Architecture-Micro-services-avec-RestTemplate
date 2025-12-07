@@ -5,7 +5,7 @@ spring:
   application:
     name: SERVICE-CAR  # Nom du service tel qu'il apparaîtra dans Eureka
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:carservicedb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     username: "root"
     password: ""
