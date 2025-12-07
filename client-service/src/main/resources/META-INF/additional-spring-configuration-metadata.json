@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "h2.console.path",
+      "type": "java.lang.String",
+      "description": "Description for h2.console.path."
+    },
+    {
+      "name": "h2.console.enabled",
+      "type": "java.lang.String",
+      "description": "Description for h2.console.enabled."
+    }
+  ] }

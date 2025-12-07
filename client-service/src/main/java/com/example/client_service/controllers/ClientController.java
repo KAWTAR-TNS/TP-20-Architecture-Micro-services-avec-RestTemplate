@@ -17,10 +17,7 @@ public class ClientController {
     @Autowired
     private ClientService service;
 
-    /**
-     * Récupère tous les clients
-     * GET /api/client
-     */
+
     @GetMapping
     public List<Client> findAll() {
         return service.findAll();

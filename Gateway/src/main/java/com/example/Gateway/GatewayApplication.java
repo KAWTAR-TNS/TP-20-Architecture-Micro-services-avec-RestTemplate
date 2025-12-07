@@ -2,12 +2,28 @@ package com.example.Gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.ReactiveDiscoveryClient;
+import org.springframework.cloud.gateway.discovery.DiscoveryClientRouteDefinitionLocator;
+import org.springframework.cloud.gateway.discovery.DiscoveryLocatorProperties;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class GatewayApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GatewayApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(GatewayApplication.class, args);
+    }
 
+    /**
+     * Configure le localisateur de routes dynamiques basé sur les services découverts
+     */
+    @Bean
+    public DiscoveryClientRouteDefinitionLocator routesDynamic(
+            ReactiveDiscoveryClient reactiveDiscoveryClient,
+            DiscoveryLocatorProperties discoveryLocatorProperties) {
+        return new DiscoveryClientRouteDefinitionLocator(
+                reactiveDiscoveryClient,
+                discoveryLocatorProperties
+        );
+    }
 }
