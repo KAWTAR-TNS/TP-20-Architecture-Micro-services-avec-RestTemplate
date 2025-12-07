@@ -1,0 +1,39 @@
+server:
+  port: 8888  # Port du Gateway
+
+spring:
+  application:
+    name: Gateway  # Nom du service
+  cloud:
+    discovery:
+      enabled: true  # Active la découverte de services
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # Routage automatique via services Eureka
+          lower-case-service-id: false  # true => noms en minuscules
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    instance-id: "${spring.application.name}:${server.port}"
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: "http://localhost:8761/eureka/"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,gateway"
+  endpoint:
+    health:
+      show-details: "always"
+
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO
+    reactor.netty.http.client: INFO
